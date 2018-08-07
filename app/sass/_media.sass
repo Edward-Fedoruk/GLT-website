@@ -1,0 +1,52 @@
+/*==========  Desktop First  ==========*/
+
+/* Extra Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/* Large Devices, Desktops */
+@media only screen and (max-width : 992px)
+	/* Medium Devices, Tablets */
+@media only screen and (max-width : 768px)
+	.main__header
+		margin-top: 14vw
+	.content
+		display: block 
+		&__description
+			width: 100%
+		&__header
+			text-align: center
+	.slide__wrapper
+		width: 100%
+		margin-left: 0
+
+	.newsPage__header
+		flex-wrap: wrap
+		justify-content: center 
+	/* Small Devices, Phones */
+@media only screen and (max-width : 576px)
+	body 
+		background-size: auto
+		overflow: visible
+	.main__header
+		margin-top: 18vw
+		font-size: 20px
+	.main
+		margin-left: 0
+	.menu
+		&__wrapper
+			padding-left: 0
+		&__desk
+			display: none
+	.nav
+		&__item
+			font-size: 14px
+	.footer
+		&__nav
+			flex-wrap: wrap
+		a
+			margin-top: 20px
+			padding: 0 1.2vw
+	.leftPanel__headerNews
+		font-size: 25px
+	/* Custom Device */
+@media only screen and (max-width : 320px)
+	/**/
