@@ -51,7 +51,7 @@ gulp.task('serve', function() {
 gulp.task('watch',['serve', 'sass', 'pug', 'js'], function() {
   gulp.watch('app/sass/**/*.sass', ["sass"])
   	.on('change', browserSync.reload);
-  gulp.watch("app/*.pug", ["pug"])
+  gulp.watch("app/pug/**/*.pug", ["pug"])
 		.on('change', browserSync.reload);
 	gulp.watch('app/js/*.js', ["js"])
 		.on('change', browserSync.reload);
