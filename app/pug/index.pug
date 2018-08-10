@@ -7,7 +7,9 @@ html(lang="en")
     title GLT
     link(rel='stylesheet', type='text/css', href='css/main.min.css') 
   body
+
     include ./components/header.pug
+
     section(class="mainHeader")
       div(class="container") 
         div(class="row justify-content-start")
@@ -19,5 +21,10 @@ html(lang="en")
             div(class="mainHeader__btnWrap")
               button(class="mainHeader__startBtn") start a project
               button(class="mainHeader__aboutBtn") more about us
+
       include ./components/social.pug
+
+      div(class="mainHeader__scroll")
+        <i class="fas fa-angle-down"></i>
+      div(class="mainHeader__line")
     
