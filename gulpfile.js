@@ -1,4 +1,4 @@
-const gulp = require('gulp'),
+var gulp = require('gulp'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync').create(),
 		uglify = require('gulp-uglify-es').default,
@@ -22,29 +22,29 @@ gulp.task('js', function() {
 });
 
 gulp.task('pug', function() {
-  return gulp.src('app/pug/**/*.pug')
+  return gulp.src('app/pug/*.pug')
   .pipe(pug({
     pretty: true
 	}))
-	.pipe(gulp.dest('app/html'))
+	.pipe(gulp.dest('app'))
 	.pipe(browserSync.stream())
 });
 
 gulp.task('sass', function() {
 	return gulp.src('app/sass/**/*.sass')
 		.pipe(sass().on('error', sass.logError))
-		.pipe(rename("main.min.css"))
 		.pipe(cleanCSS())
 		.pipe(autoprefixer({
 			browsers: ['last 15 versions'], 
 		}))
+		.pipe(rename("main.min.css"))
   	.pipe(gulp.dest('app/css'))
   	.pipe(browserSync.stream())
 });
 
 gulp.task('serve', function() {
   browserSync.init({ 
-    server: 'app/html'
+    server: 'app'
     }); 
 });
 
