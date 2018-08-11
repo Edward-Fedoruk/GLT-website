@@ -59,7 +59,6 @@ gulp.task('watch',['serve', 'sass', 'pug', 'js'], function() {
 
 gulp.task('default', ['watch']);
 
-
 gulp.task('imagemin', function() {
 	return gulp.src('app/img/**/*')
 		.pipe(imagemin())

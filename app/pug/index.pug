@@ -8,23 +8,26 @@ html(lang="en")
     link(rel='stylesheet', type='text/css', href='css/main.min.css') 
   body
 
-    include ./components/header.pug
-
     section(class="mainHeader")
+
+      include ./components/header.pug
+
       div(class="container") 
         div(class="row justify-content-start")
-          div(class="col-lg-9")
-            h3(class="mainHeader__welcome") welcome to glt 
-            h1(class="mainHeader__head").
-              We are a creative group of people who design influential 
-              brands and digital experiences.
-            div(class="mainHeader__btnWrap")
-              button(class="mainHeader__startBtn") start a project
-              button(class="mainHeader__aboutBtn") more about us
+          div(class="col-lg-8")
+            div(class="mainHeader__wrap")
+              h3(class="mainHeader__welcome") welcome to glt 
+              h1(class="mainHeader__head").
+                We are a creative group of people who design influential 
+                brands and digital experiences.
+              div(class="mainHeader__btnWrap")
+                button(class="mainHeader__startBtn") start a project
+                button(class="mainHeader__aboutBtn") more about us
 
       include ./components/social.pug
 
       div(class="mainHeader__scroll")
-        <i class="fas fa-angle-down"></i>
-      div(class="mainHeader__line")
+        div(class="mainHeader__scrollIcon")
+          <i class="fas fa-angle-down"></i> scroll down
+        div(class="mainHeader__line")
     

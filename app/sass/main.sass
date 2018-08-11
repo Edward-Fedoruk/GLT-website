@@ -1,3 +1,57 @@
-@import './libs';
-a 
-  color: #000
+@import './libs'
+@import './vars'
+@import './fonts'
+
+// top line styles
+@import './_components/header'
+
+.mainHeader
+  background-color: #000
+  min-height: 786px
+  position: relative
+  &__wrap
+    padding-top: 10vw
+    color: #fff
+  // social icons
+  @import './_components/social'
+  .social
+    height: 200px
+    flex-flow: column wrap
+    position: absolute
+    right: 15px
+    top: 50%
+    transform: translateY(-50%)
+    &__item
+      border-radius: 100%
+      border: 2px solid white
+  // scroll down feature
+  &__scroll
+    position: absolute
+    top: 90%
+    width: 107px
+    color: #fff 
+    height: 10%
+    right: 30px
+    display: flex
+    // justify-content: space-between
+    // align-items: center
+  &__scrollIcon
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 20px
+    width: 90%
+  &__line
+    width: 2px
+    height: calc(100% - 10px)
+    background-color: $green
+    // transform: rotate(90deg)
+    align-items: center
+    position: absolute
+    top: 10px
+    right: 0
+    transform-origin: 0 100%
+     
+  
+
+@import './media'
