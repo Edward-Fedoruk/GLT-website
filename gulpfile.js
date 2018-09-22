@@ -14,7 +14,8 @@ gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/**/*.js',
 		// 'app/libs/owlCarousel/owl.carousel.min.js',
-		'app/js/main.js']) 
+		'app/js/main.js'
+		]) 
 		.pipe(uglify())
 		.pipe(concat('common.min.js'))
 		.pipe(gulp.dest('app/js'))
@@ -48,7 +49,7 @@ gulp.task('serve', function() {
     }); 
 });
 
-gulp.task('watch',['serve', 'sass', 'pug', 'js'], function() {
+gulp.task('watch', ['serve', 'sass', 'pug', 'js'], function() {
   gulp.watch('app/sass/**/*.sass', ["sass"])
   	.on('change', browserSync.reload);
   gulp.watch("app/pug/**/*.pug", ["pug"])
