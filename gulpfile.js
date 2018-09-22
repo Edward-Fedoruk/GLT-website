@@ -13,7 +13,6 @@ var gulp = require('gulp'),
 gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/**/*.js',
-		// 'app/libs/owlCarousel/owl.carousel.min.js',
 		'app/js/main.js'
 		]) 
 		.pipe(uglify())
@@ -46,7 +45,7 @@ gulp.task('sass', function() {
 gulp.task('serve', function() {
   browserSync.init({ 
     server: 'app'
-    }); 
+  }); 
 });
 
 gulp.task('watch', ['serve', 'sass', 'pug', 'js'], function() {
