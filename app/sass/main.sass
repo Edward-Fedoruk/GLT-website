@@ -55,7 +55,7 @@ body
     z-index: 0
     background-color: #000000
     opacity: .6
-    
+
   // social icons
   @import './_components/social'
 
@@ -63,17 +63,28 @@ body
   &__scroll
     position: absolute
     top: 90%
-    width: 145px
+    width: 155px
     color: #fff 
     height: 10%
-    right: 30px
-    display: flex
+    right: 5rem
   &__scrollIcon
     display: flex
+    cursor: pointer
     align-items: center
-    justify-content: space-around
     height: 20px
     width: 90%
+    margin-top: .2rem
+    i 
+      font-size: 1rem
+      margin-right: 1rem
+      color: $green
+    span 
+      font-size: .6rem  
+      min-width: max-content
+      text-transform: uppercase
+      letter-spacing: .2rem
+      font-family: $montserat-semibold
+      font-weight: bold
   &__line
     width: 2px
     height: calc(100% - 10px)
