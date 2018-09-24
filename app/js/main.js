@@ -6,11 +6,10 @@ $(document).ready(function() {
       "fx-menu-fade",
       "fx-panels-none",
       "fx-listitems-slide",
-      "custom-width"
     ]
  });
-  var $icon = $("#my-icon");
-  var API = $menu.data( "mmenu" );
+  const $icon = $("#my-icon");
+  const API = $menu.data( "mmenu" );
   
   $icon.on( "click", function() {
       API.open();
