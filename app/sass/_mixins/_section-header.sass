@@ -1,0 +1,22 @@
+@mixin section-header ($section-name, $name-color, $hello-color, $border-color, $font-size)
+  .#{$section-name}__greeting
+    width: fit-content
+    border-bottom: 1px solid $border-color
+    margin: 0 auto 3rem auto
+    padding: 0 20px
+  .#{$section-name}__hello
+    text-align: center
+    font-size: 1.2rem
+    margin: 0
+    color: $hello-color
+    font-family: $montserat-bold
+    text-transform: uppercase
+  .#{$section-name}__name
+    text-align: center
+    font-size: $font-size
+    padding: 0 0 40px 0
+    color: $name-color
+    margin: 0
+    font-family: $montserat-medium
+    text-transform: capitalize
+    font-weight: 400

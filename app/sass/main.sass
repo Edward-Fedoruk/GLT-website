@@ -1,6 +1,8 @@
 @import './libs'
 @import './vars'
 @import './fonts'
+// mixins
+@import './_mixins/section-header'
 
 body 
   scroll-behavior: smooth
@@ -109,27 +111,10 @@ body
     top: 0px
     right: 5rem
     transform-origin: 0 100%
-  &__greeting
-    width: fit-content
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25)
-    margin: 0 auto 3rem auto
-    padding: 0 20px
-  &__hello
-    text-align: center
-    font-size: 1.2rem
-    margin: 0
-    color: #000
-    font-family: $montserat-bold
-    text-transform: uppercase
-  &__name
-    text-align: center
-    font-size: 5.5rem
-    padding: 0 0 40px 0
-    color: #fff
-    margin: 0
-    font-family: $montserat-medium
-    text-transform: capitalize
-    font-weight: 400
+
+  // styles for section header
+  @include section-header(about, #fff, #000, rgba(255, 255, 255, 0.25), 5rem) 
+
   &__description
     font-family: $lora-regular
     font-size: 1.5rem
@@ -161,7 +146,32 @@ body
     font-family: $montserat-semibold
     font-weight: 600
     text-transform: capitalize
-
     text-align: center    
+
+// services section
+.service 
+  padding: $section-indent 0
+  background-color: #fff
+  @include section-header(service, #000000, $green, rgba(0, 0, 0, 0.1), 3.2rem)
+  &__sname
+    font-size: 2rem
+    font-family: $montserat-medium    
+    margin: 0 
+  &__icon
+    font-size: 3rem
+    color: $green
+  &__block 
+    display: flex
+    flex-wrap: wrap
+    align-items: flex-start
+  &__info
+    width: 80%
+    margin-left: 5%
+  &__description
+    font-size: 1rem
+    font-family: $lora-regular
+    line-height: 30px
+    color: $gray-darker
+
 
 @import './media'

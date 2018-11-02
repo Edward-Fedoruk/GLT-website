@@ -7,68 +7,107 @@ html(lang="en")
     title GLT
     link(rel='stylesheet', type='text/css', href='css/main.min.css') 
   body
-    div(class="page")
-      section(class="mainHeader")
-        div(class="mainHeader__overlay")
+    .page
+      section.mainHeader
+        .mainHeader__overlay
         
         include ./components/header.pug
 
-        div(class="container") 
-          div(class="row justify-content-start")
-            div(class="col-lg-1")
-            div(class="col-lg-7")
-              div(class="mainHeader__wrap")
-                h3(class="mainHeader__welcome") welcome to glt 
-                h1(class="mainHeader__head").
+        .container 
+          .row.justify-content-start
+            .col-lg-1
+            .col-lg-7
+              .mainHeader__wrap
+                h3.mainHeader__welcome welcome to glt 
+                h1.mainHeader__head.
                   We are a creative group of people who design influential 
                   brands and digital experiences.
-                div(class="mainHeader__btnWrap")
-                  a(class="mainHeader__btn") start a project
-                  a(class="mainHeader__btn") more about us
+                .mainHeader__btnWrap
+                  a.mainHeader__btn start a project
+                  a.mainHeader__btn more about us
 
         include ./components/social.pug
 
-        div(class="mainHeader__scroll")
-          div(class="mainHeader__scrollIcon")
-            i(class="fas fa-angle-down") 
+        .mainHeader__scroll
+          .mainHeader__scrollIcon
+            i.fas.fa-angle-down 
             span scroll down 
-          div(class="mainHeader__line")
+          .mainHeader__line
 
-      section(class="about")
+      section.about
 
-        div(class="about__line")
+        .about__line
 
-        div(class="container")
-          div(class="row justify-content-center")
-            div(class="col-md-7")
-              div(class="about__greeting")
-                p(class="about__hello") hello there
-                h2(class="about__name") we are glint
+        .container
+          .row.justify-content-center
+            .col-md-7
+              .about__greeting
+                p.about__hello hello there
+                h2.about__name we are glint
 
-          div(class="row justify-content-center")
-            div(class="col-md-10")      
-              div(class="about__description") Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus non, cumque, accusantium dolorum harum porro dolore numquam provident ex, quo perspiciatis quam! Aspernatur, totam fugit. Repellat eligendi soluta suscipit minima voluptate error neque illo harum! Libero ratione natus dolores, vero incidunt asperiores quae deserunt fugit. Harum enim accusantium a deleniti?
+          .row.justify-content-center
+            .col-md-10    
+              .about__description Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus non, cumque, accusantium dolorum harum porro dolore numquam provident ex, quo perspiciatis quam! Aspernatur, totam fugit. Repellat eligendi soluta suscipit minima voluptate error neque illo harum! Libero ratione natus dolores, vero incidunt asperiores quae deserunt fugit. Harum enim accusantium a deleniti?
               
-          div(class="row justify-content-center align-items-center about__achievements")
-            div(class="col-md-3 about__achievementWrap")
-              div(class="about__achievement")
-                div(class="about__score") 127
-                span(class="about__scoreDescr") awards received
+          .row.justify-content-center.align-items-center.about__achievements
+            .col-md-3.about__achievementWrap
+              .about__achievement
+                .about__score 127
+                span.about__scoreDescr awards received
 
-            div(class="col-md-3 about__achievementWrap")
-              div(class="about__achievement") 
-                div(class="about__score") 1505
-                span(class="about__scoreDescr") cup of coffee
+            .col-md-3.about__achievementWrap
+              .about__achievement
+                .about__score 1505
+                span.about__scoreDescr cup of coffee
 
-            div(class="col-md-3 about__achievementWrap")
-              div(class="about__achievement")
-                div(class="about__score") 109
-                span(class="about__scoreDescr") projects complited
+            .col-md-3.about__achievementWrap
+              .about__achievement
+                .about__score 109
+                span.about__scoreDescr projects complited
 
-            div(class="col-md-3 about__achievementWrap")
-              div(class="about__achievement")
-                div(class="about__score") 102
-                span(class="about__scoreDescr") happy clients
+            .col-md-3.about__achievementWrap
+              .about__achievement
+                .about__score 102
+                span.about__scoreDescr happy clients
+
+      section.service
+        .container
+          .row.justify-content-center
+            .col-md-11
+              .service__greeting
+                p.service__hello What we do
+                h2.service__name We’ve got everything you need to launch and grow your business
+
+          -
+            const serviceInfo = [
+              [
+                {name: 'Brand Identity', icon: 'fas fa-brush'}, 
+                {name: 'Illustration',  icon: 'fas fa-brush'}
+              ], 
+
+              [
+                {name: 'Marketing',  icon: 'fas fa-object-ungroup'}, 
+                {name: 'Web Design',  icon: 'fas fa-globe-africa'}
+              ], 
+
+              [
+                {name: 'Packaging Design',  icon: 'fas fa-cube'}, 
+                {name: 'Web Development',  icon: 'fas fa-bullhorn'}
+              ]
+            ]
+
+          each val, index in serviceInfo
+            .row.justify-content-between
+              each value in val
+                .col-md-6 
+                  .service__block
+                    .service__icon
+                      i(class=`${value.icon}`)
+                    div.service__info
+                      h2.service__sname #{value.name}
+                      p.service__description Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga doloribus unde dolores rem voluptates quod aspernatur dolor. Quam fugiat vel dignissimos repellat alias explicabo atque enim aliquam similique voluptatibus, eaque dolor dolores voluptatum repudiandae eum eos neque rerum, voluptas quia.
+
+                
 
   script(src="./js/common.min.js")
       
