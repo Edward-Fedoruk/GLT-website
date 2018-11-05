@@ -8,6 +8,8 @@ html(lang="en")
     link(rel='stylesheet', type='text/css', href='css/main.min.css') 
   body
     .page
+      .scrollTop
+        i(class="fas fa-arrow-up")
       section.mainHeader
         .mainHeader__overlay
         
@@ -17,7 +19,7 @@ html(lang="en")
           .row.justify-content-start
             .col-lg-1
             .col-lg-7
-              .mainHeader__wrap
+              div(class="mainHeader__wrap" data-aos="fade-up")
                 h3.mainHeader__welcome welcome to glt 
                 h1.mainHeader__head.
                   We are a creative group of people who design influential 
@@ -29,7 +31,7 @@ html(lang="en")
         include ./components/social.pug
 
         .mainHeader__scroll
-          .mainHeader__scrollIcon
+          div(class="mainHeader__scrollIcon" data-link=".about")
             i.fas.fa-angle-down 
             span scroll down 
           .mainHeader__line
@@ -41,15 +43,15 @@ html(lang="en")
         .container
           .row.justify-content-center
             .col-md-7
-              .about__greeting
+              div(class="about__greeting" data-aos="fade-up")
                 p.about__hello hello there
                 h2.about__name we are glint
 
-          .row.justify-content-center
+          div(class="row justify-content-center" data-aos="fade-up")
             .col-md-10    
               .about__description Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus non, cumque, accusantium dolorum harum porro dolore numquam provident ex, quo perspiciatis quam! Aspernatur, totam fugit. Repellat eligendi soluta suscipit minima voluptate error neque illo harum! Libero ratione natus dolores, vero incidunt asperiores quae deserunt fugit. Harum enim accusantium a deleniti?
               
-          .row.justify-content-center.align-items-center.about__achievements
+          div(class="row justify-content-center align-items-center about__achievements" data-aos="fade-up")
             .col-md-3.about__achievementWrap
               .about__achievement
                 .about__score 127
@@ -74,7 +76,7 @@ html(lang="en")
         .container
           .row.justify-content-center
             .col-md-11
-              .service__greeting
+              div(class="service__greeting" data-aos="fade-up")
                 p.service__hello What we do
                 h2.service__name We’ve got everything you need to launch and grow your business
 
@@ -100,7 +102,7 @@ html(lang="en")
             .row.justify-content-between
               each value in val
                 .col-md-6 
-                  .service__block
+                  div(class="service__block" data-aos="fade-up")
                     .service__icon
                       i(class=`${value.icon}`)
                     div.service__info
@@ -111,27 +113,27 @@ html(lang="en")
         .container
           .row.justify-content-center
             .col-md-11
-              .work__greeting
+              div(class="work__greeting" data-aos="fade-up")
                 p.work__hello RECENT WORKS
                 h2.work__name We love what we do, check out some of our latest works
       .work__content
         .container
           .work__lightgallery            
-            a(href="../img/portfolio/guitarist.jpg")
+            a(data-aos="fade-up" href="../img/portfolio/guitarist.jpg")
               img(src="../img/portfolio/guitarist.jpg")
-            a(href="../img/portfolio/lady-shutterbug.jpg")
+            a(data-aos="fade-up" href="../img/portfolio/lady-shutterbug.jpg")
               img(src="../img/portfolio/lady-shutterbug.jpg")
-            a(href="../img/portfolio/the-beetle.jpg")
+            a(data-aos="fade-up" href="../img/portfolio/the-beetle.jpg")
               img(src="../img/portfolio/the-beetle.jpg")      
 
       section.clients
         .container
           .row.justify-content-center
             .col-md-11
-              .clients__greeting
+              div(class="clients__greeting" data-aos="fade-up")
                 p.clients__hello OUR CLIENTS
                 h2.clients__name Glint has been honored to partner up with these clients 
-          .clients__brandSlider
+          div(class="clients__brandSlider" data-aos="fade-up")
             .clientIcon
               i(class="fab fa-apple")
             .clientIcon
@@ -146,7 +148,8 @@ html(lang="en")
               i(class="fab fa-joomla")
             .clientIcon
               i(class="fab fa-joomla")
-          .clients__saySlider
+
+          div(class="clients__saySlider" data-aos="fade-up")
             .clients__client
               p.clients__say Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus consectetur harum tempore quaerat in, quod expedita modi atque voluptates architecto!
               img(class="clients__clientImg" src="../img/avatars/user-01.jpg")
@@ -164,10 +167,16 @@ html(lang="en")
               p.clients__job CEO Google
                 .mainHeader__scroll
           .clients__line
-          
+      
+      section.contact
+        .container
+          .row.justify-content-center
+            .col-md-11
+              div(class="contact__greeting" data-aos="fade-up")
+                p.contact__hello contact us
+                h2.contact__name Reach out for a new project or just say hello
+      
+      include ./components/footer.pug
 
-
-
-          
   script(src="./js/common.min.js")
       

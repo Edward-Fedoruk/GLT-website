@@ -1,4 +1,4 @@
-$(document).ready(function() {
+function setUp() {
   var $menu = $("#my-menu").mmenu({
     "extensions": [
       "position-right",
@@ -41,4 +41,55 @@ $(document).ready(function() {
     slidesToScroll: 1,
   })
 
-});
+    
+  AOS.init({
+    offset: 300,
+    duration: 700,
+    once: true
+  })
+}
+
+const addClassOnScroll = (elemHeight, elemOffset, elem) => className => {
+  console.log(elemHeight, elemOffset, elem, className)
+  elemOffset + elemHeight < $(window).scrollTop()
+    ? elem.addClass(className) 
+    : elem.removeClass(className)
+}
+
+
+$(document).ready(() => {
+  setUp()  
+
+  const scrollTo = elem => e => {
+    const sectionName = elem || $(e.currentTarget).attr("data-link")    
+    $('html, body').animate({
+      scrollTop: $(sectionName).offset().top
+    }, 500);
+  }
+
+  const menuButton = $(".header__menuWrap") 
+
+  const aboutSection = $(".about")
+  const scrollTopBtn = $(".scrollTop")
+
+  $(".header__menuItem").click(scrollTo(false))
+  $(".mainHeader__scrollIcon").click(scrollTo(false))
+  scrollTopBtn.click(scrollTo(".page"))
+
+  const toggleMenuBG = addClassOnScroll(
+    menuButton.height(), 
+    menuButton.offset().top, 
+    menuButton
+  )
+
+  const toggleScrollTop = addClassOnScroll(
+    0, 
+    aboutSection.offset().top, 
+    $(".scrollTop")
+  )
+  
+  $(window).scroll((e) => {
+    toggleMenuBG("header__menuWrap-bg")   
+    toggleScrollTop("scrollTop-visible")
+  })
+})

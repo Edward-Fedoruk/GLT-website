@@ -16,9 +16,9 @@ gulp.task('js', function() {
 		'app/libs/slick/slick.min.js',
 		'app/libs/mmenu/jquery.mmenu.js',
 		'app/libs/lightgallery/lightgallery-all.min.js',
+		'app/libs/aos/aos.js',
 		'app/js/main.js'
 	]) 
-
 		.pipe(uglify())
 		.pipe(concat('common.min.js'))
 		.pipe(gulp.dest('app/js'))
