@@ -7,7 +7,8 @@ $(document).ready(function() {
       "fx-panels-none",
       "fx-listitems-slide",
     ]
- });
+  });
+
   const $icon = $("#my-icon");
   const API = $menu.data( "mmenu" );
   
@@ -25,4 +26,7 @@ $(document).ready(function() {
         $icon.removeClass( "is-active" );
       }, 100);
   });
+
+  $(".work__lightgallery").lightGallery({
+  }); 
 });

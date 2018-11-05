@@ -173,5 +173,15 @@ body
     line-height: 30px
     color: $gray-darker
 
+.work
+  padding: $section-indent 0
+  background-color: #000
+  @include section-header(service, #fff, $green, rgba(0, 0, 0, 0.1), 3.2rem)
+  &__lightgallery
+    transform: translateY(-12vw)
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
 
 @import './media'
