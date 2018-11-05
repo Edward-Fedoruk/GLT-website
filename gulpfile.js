@@ -13,6 +13,7 @@ var gulp = require('gulp'),
 gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/jquery.js',
+		'app/libs/slick/slick.min.js',
 		'app/libs/mmenu/jquery.mmenu.js',
 		'app/libs/lightgallery/lightgallery-all.min.js',
 		'app/js/main.js'

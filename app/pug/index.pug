@@ -111,19 +111,63 @@ html(lang="en")
         .container
           .row.justify-content-center
             .col-md-11
-              .service__greeting
-                p.service__hello RECENT WORKS
-                h2.service__name We love what we do, check out some of our latest works
+              .work__greeting
+                p.work__hello RECENT WORKS
+                h2.work__name We love what we do, check out some of our latest works
       .work__content
         .container
           .work__lightgallery            
-            a(class="work__galleryItem1" href="../img/portfolio/guitarist.jpg")
+            a(href="../img/portfolio/guitarist.jpg")
               img(src="../img/portfolio/guitarist.jpg")
-            a(class="work__galleryItem1" href="../img/portfolio/lady-shutterbug.jpg")
+            a(href="../img/portfolio/lady-shutterbug.jpg")
               img(src="../img/portfolio/lady-shutterbug.jpg")
-            a(class="work__galleryItem1" href="../img/portfolio/the-beetle.jpg")
+            a(href="../img/portfolio/the-beetle.jpg")
               img(src="../img/portfolio/the-beetle.jpg")      
-                
 
+      section.clients
+        .container
+          .row.justify-content-center
+            .col-md-11
+              .clients__greeting
+                p.clients__hello OUR CLIENTS
+                h2.clients__name Glint has been honored to partner up with these clients 
+          .clients__brandSlider
+            .clientIcon
+              i(class="fab fa-apple")
+            .clientIcon
+              i(class="fab fa-firefox")
+            .clientIcon
+              i(class="fab fa-dropbox")
+            .clientIcon
+              i(class="fab fa-blackberry")
+            .clientIcon
+              i(class="fab fa-dropbox")
+            .clientIcon
+              i(class="fab fa-joomla")
+            .clientIcon
+              i(class="fab fa-joomla")
+          .clients__saySlider
+            .clients__client
+              p.clients__say Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus consectetur harum tempore quaerat in, quod expedita modi atque voluptates architecto!
+              img(class="clients__clientImg" src="../img/avatars/user-01.jpg")
+              p.clients__clientName Sundar Pichai
+              p.clients__job CEO Google
+            .clients__client
+              p.clients__say Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus consectetur harum tempore quaerat in, quod expedita modi atque voluptates architecto!
+              img(class="clients__clientImg" src="../img/avatars/user-03.jpg")
+              p.clients__clientName Sundar Pichai
+              p.clients__job CEO Google
+            .clients__client
+              p.clients__say Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus consectetur harum tempore quaerat in, quod expedita modi atque voluptates architecto!
+              img(class="clients__clientImg" src="../img/avatars/user-02.jpg")
+              p.clients__clientName Sundar Pichai
+              p.clients__job CEO Google
+                .mainHeader__scroll
+          .clients__line
+          
+
+
+
+          
   script(src="./js/common.min.js")
       

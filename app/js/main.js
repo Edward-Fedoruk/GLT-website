@@ -29,4 +29,16 @@ $(document).ready(function() {
 
   $(".work__lightgallery").lightGallery({
   }); 
+
+  $('.clients__brandSlider').slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    dots: true,
+  })
+
+  $('.clients__saySlider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  })
+
 });
