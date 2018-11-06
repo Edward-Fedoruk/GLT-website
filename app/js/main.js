@@ -1,4 +1,4 @@
-function setUp() {
+function setMmenu() {
   var $menu = $("#my-menu").mmenu({
     "extensions": [
       "position-right",
@@ -7,41 +7,29 @@ function setUp() {
       "fx-panels-none",
       "fx-listitems-slide",
     ]
-  });
+  })
 
-  const $icon = $("#my-icon");
-  const API = $menu.data( "mmenu" );
+  const $icon = $("#my-icon")
+  const API = $menu.data( "mmenu" )
   
   $icon.on( "click", function() {
-      API.open();
-  });
+      API.open()
+  })
   
   API.bind( "open:finish", function() {
       setTimeout(function() {
-        $icon.addClass( "is-active" );
-      }, 100);
-  });
+        $icon.addClass( "is-active" )
+      }, 100)
+  })
+  
   API.bind( "close:finish", function() {
       setTimeout(function() {
-        $icon.removeClass( "is-active" );
-      }, 100);
-  });
-
-  $(".work__lightgallery").lightGallery({
-  }); 
-
-  $('.clients__brandSlider').slick({
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    dots: true,
+        $icon.removeClass( "is-active" )
+      }, 100)
   })
+}
 
-  $('.clients__saySlider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  })
-
-    
+function setAOS() {
   AOS.init({
     offset: 300,
     duration: 700,
@@ -49,32 +37,80 @@ function setUp() {
   })
 }
 
-const addClassOnScroll = (elemHeight, elemOffset, elem) => className => {
-  console.log(elemHeight, elemOffset, elem, className)
-  elemOffset + elemHeight < $(window).scrollTop()
-    ? elem.addClass(className) 
-    : elem.removeClass(className)
+function setLighGallery() {
+  $(".work__lightgallery").lightGallery()
+}
+
+function setSlick() {
+  $('.clients__brandSlider').slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          infinite: true,
+          dots: true,
+          arrows: false
+        }
+      }
+    ]
+  })
+
+  $('.clients__saySlider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          infinite: true,
+          dots: true,
+          arrows: false
+        }
+      }
+    ]
+  })
 }
 
 
-$(document).ready(() => {
-  setUp()  
 
-  const scrollTo = elem => e => {
-    const sectionName = elem || $(e.currentTarget).attr("data-link")    
-    $('html, body').animate({
-      scrollTop: $(sectionName).offset().top
-    }, 500);
-  }
+const addClassOnScroll = 
+  (elemHeight, elemOffset, elem) => (className, scrollY) => 
+    elemOffset + elemHeight < scrollY
+      ? elem.addClass(className) 
+      : elem.removeClass(className)
+
+
+const scrollTo = elem => e => {
+  const sectionName = elem || $(e.currentTarget).attr("data-link")    
+  $('html, body').animate({
+    scrollTop: $(sectionName).offset().top
+  }, 500)
+}
+
+$(document).ready(() => {
+  setMmenu()
+  setAOS()
+  setSlick()
+  setLighGallery()
 
   const menuButton = $(".header__menuWrap") 
-
   const aboutSection = $(".about")
   const scrollTopBtn = $(".scrollTop")
-
-  $(".header__menuItem").click(scrollTo(false))
-  $(".mainHeader__scrollIcon").click(scrollTo(false))
-  scrollTopBtn.click(scrollTo(".page"))
+  const header = $(".mainHeader")
+  const headerHeight = header.height()
 
   const toggleMenuBG = addClassOnScroll(
     menuButton.height(), 
@@ -87,9 +123,17 @@ $(document).ready(() => {
     aboutSection.offset().top, 
     $(".scrollTop")
   )
-  
-  $(window).scroll((e) => {
-    toggleMenuBG("header__menuWrap-bg")   
-    toggleScrollTop("scrollTop-visible")
+
+  $(".header__menuItem").click(scrollTo(false))
+  $(".mainHeader__scrollIcon").click(scrollTo(false))
+  scrollTopBtn.click(scrollTo(".page"))
+
+  $(window).scroll(e => {
+    const scrollY = e.currentTarget.scrollY
+    toggleMenuBG("header__menuWrap-bg",scrollY)   
+    toggleScrollTop("scrollTop-visible", scrollY)
+    
+    if(headerHeight > e.currentTarget.scrollY)
+      header.css("background-position", `0px ${scrollY / 2}px`)
   })
 })

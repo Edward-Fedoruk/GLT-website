@@ -2,12 +2,53 @@
 
 /* Extra Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
+	.mainHeader
+		min-height: 860px
 	/* Large Devices, Desktops */
 @media only screen and (max-width : 992px)
+	html 
+		font-size: 13px
+
+	.mainHeader
+		min-height: 660px
+
+	.about__achievementWrap
+		border-right: none 
+
 	/* Medium Devices, Tablets */
 @media only screen and (max-width : 768px)
+	html 
+		font-size: 12px
+
 	/* Small Devices, Phones */
 @media only screen and (max-width : 576px)
+	html 
+		font-size: 11px
+	
+	
+	.mainHeader 
+		min-height: 480px
+		background-size: 120% 100%
+		&__btnWrap
+			display: flex
+			justify-content: center	
+			align-items: center
+			padding-top: 3rem		
+		&__btn
+			text-align: center
+			padding: 10px 10px
+		&__welcome
+			text-align: center
+		&__wrap
+			width: 85%
+			padding-top: 0 		
+			margin: 0 auto	
+		&__head
+			font-size: 2.3rem
+			text-align: center
+		.social
+			display: none
+			
 	/* Custom Device */
 @media only screen and (max-width : 320px)
 	/**/
